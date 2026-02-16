@@ -8,10 +8,15 @@
   right: 0;
   bottom: 0;
   background-color: #0000004d;
+  opacity: 0;
   visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
 }
 
 .modal__opened {
+  opacity: 1;
   visibility: visible;
 }
 
@@ -23,6 +28,15 @@
   position: absolute;
   top: 20px;
   right: 28px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../../assets/X_icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .modal__content {
