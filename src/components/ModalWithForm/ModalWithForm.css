@@ -45,9 +45,13 @@
   background-color: transparent;
 }
 
+.modal__close_dark {
+  background-image: url("../../assets/X_icon_blk.svg");
+}
+
 .modal__content {
   width: 496px;
-  height: 436px;
+  /* height: 436px; */
   border-radius: 5%;
   background-color: #fff;
   position: relative;
@@ -111,7 +115,8 @@
 }
 
 .modal__footer {
-  margin-left: 36px;
+  padding-left: 36px;
+  background-color: white;
 }
 
 .modal__caption {

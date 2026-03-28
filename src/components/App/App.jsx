@@ -40,6 +40,31 @@ function App() {
       .catch(console.error);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setActiveModal("");
+      }
+    };
+    if (activeModal) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [activeModal]);
+  //------//
+  useEffect(() => {
+    const handleOverlayClick = (event) => {
+      if (event.target === event.currentTarget) {
+        console.log("overlay");
+        setActiveModal("");
+      }
+    };
+    if (activeModal) {
+      document.addEventListener("click", handleOverlayClick);
+    }
+    return () => document.removeEventListener("click", handleOverlayClick);
+  }, [activeModal]);
+  //--//
   return (
     <div className="page">
       <div className="page__content">

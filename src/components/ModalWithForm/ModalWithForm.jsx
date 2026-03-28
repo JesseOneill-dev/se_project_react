@@ -6,15 +6,24 @@ function ModalWithForm({
   title,
   isOpen,
   closeActiveModal,
+  handleKeyDown,
 }) {
   return (
-    <div className={`modal ${isOpen ? "modal__opened" : ""}`}>
-      <div className="modal__content">
+    <div
+      className={`modal ${isOpen ? "modal__opened" : ""}`}
+      onClick={() => {
+        closeActiveModal();
+      }}
+    >
+      <div className="modal__content" onClick={(evt) => evt.stopPropagation()}>
         <h2 className="modal__title">{title}</h2>
         <button
-          onClick={closeActiveModal}
+          onClick={() => {
+            closeActiveModal();
+          }}
+          onKeyDown={handleKeyDown}
           type="button"
-          className="modal__close"
+          className="modal__close modal__close_dark"
         ></button>
         <form action="" className="modal__form">
           {children}
